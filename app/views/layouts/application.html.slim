@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title Referral
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    .ui.menu
+      a.item href="http://www.morselifecareers.org/"
+        i.caret.left.icon
+        |Return to Site
+      link_to leaderboard_path 
+        i.Sitemap
+        |View Leaderboard
+    = yield

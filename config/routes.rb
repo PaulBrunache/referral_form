@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'point_tracker/leaderboard'
+  get '/leaderboard', to: "point_tracker#leaderboard"
 
   get '/refer', to: 'refer#index'
 
