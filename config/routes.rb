@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'refer/index'
+  get '/refer', to: 'refer#index'
 
   resources :recommendations
   resources :employees

@@ -1,5 +1,8 @@
-h1 New employee
+.ui.menu
+  a.item href="http://www.morselifecareers.org/"
+    i.caret.left.icon
+    |Return to Site
 
-== render 'form'
-
-= link_to 'Back', employees_path
+.ui.centered.grid.container style="margin-top: .1%"
+  .nine.wide.column style="border:1px solid rgba(34,36,38,.15); border-radius: 5px;"
+    == render 'form'
