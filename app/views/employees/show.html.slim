@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Employee name:
+  = @employee.employee_name
+p
+  strong Work:
+  = @employee.work_id
+p
+  strong Department:
+  = @employee.department
+p
+  strong Email:
+  = @employee.email
+p
+  strong Phone number:
+  = @employee.phone_number
+
+= link_to 'Edit', edit_employee_path(@employee)
+'|
+= link_to 'Back', employees_path

@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Employee:
+  = @recommendation.employee
+p
+  strong Referral name:
+  = @recommendation.referral_name
+p
+  strong Phone number:
+  = @recommendation.phone_number
+p
+  strong Email:
+  = @recommendation.email
+p
+  strong Position of interest:
+  = @recommendation.position_of_interest
+
+= link_to 'Edit', edit_recommendation_path(@recommendation)
+'|
+= link_to 'Back', recommendations_path

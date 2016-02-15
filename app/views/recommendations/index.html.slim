@@ -1,0 +1,29 @@
+h1 Listing recommendations
+
+table
+  thead
+    tr
+      th Employee
+      th Referral name
+      th Phone number
+      th Email
+      th Position of interest
+      th
+      th
+      th
+
+  tbody
+    - @recommendations.each do |recommendation|
+      tr
+        td = recommendation.employee
+        td = recommendation.referral_name
+        td = recommendation.phone_number
+        td = recommendation.email
+        td = recommendation.position_of_interest
+        td = link_to 'Show', recommendation
+        td = link_to 'Edit', edit_recommendation_path(recommendation)
+        td = link_to 'Destroy', recommendation, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Recommendation', new_recommendation_path
