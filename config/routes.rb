@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get '/leaderboard', to: "point_tracker#leaderboard"
-
-  get '/refer', to: 'refer#index'
+  get '/leaderboard', to: "admin_panel#leaderboard"
 
   resources :recommendations
   resources :employees

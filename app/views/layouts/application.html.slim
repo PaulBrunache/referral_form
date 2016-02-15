@@ -10,8 +10,11 @@ html
     .ui.menu
       a.item href="http://www.morselifecareers.org/"
         i.caret.left.icon
-        |Return to Site
-      = link_to leaderboard_path 
-        i.Sitemap
+        |Return to Careers Home
+      = link_to root_path, class: 'item'
+        i.add.user.icon
+        |Refer a Friend
+      = link_to leaderboard_path, class: 'item'
+        i.sitemap.icon
         |View Leaderboard
     = yield

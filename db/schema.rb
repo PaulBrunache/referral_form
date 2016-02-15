@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160215065423) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "employees", force: :cascade do |t|
     t.string   "employee_name"
     t.string   "work_id"
@@ -36,7 +33,6 @@ ActiveRecord::Schema.define(version: 20160215065423) do
     t.datetime "updated_at",           null: false
   end
 
-  add_index "recommendations", ["employee_id"], name: "index_recommendations_on_employee_id", using: :btree
+  add_index "recommendations", ["employee_id"], name: "index_recommendations_on_employee_id"
 
-  add_foreign_key "recommendations", "employees"
 end
