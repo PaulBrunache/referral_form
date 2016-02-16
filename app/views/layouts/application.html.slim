@@ -14,7 +14,8 @@ html
       = link_to root_path, class: 'item'
         i.add.user.icon
         |Refer a Friend
-      = link_to leaderboard_path, class: 'item'
-        i.sitemap.icon
-        |View Leaderboard
+      - if admin_signed_in?
+        = link_to admin_leaderboard_path, class: 'item'
+          i.sitemap.icon
+          |View Leaderboard
     = yield
