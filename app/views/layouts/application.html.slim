@@ -15,7 +15,7 @@ html
         i.add.user.icon
         |Refer a Friend
       - if admin_signed_in?
-        = link_to admin_leaderboard_path, class: 'item'
+        = link_to admin_dashboard_path, class: 'item'
           i.sitemap.icon
-          |View Leaderboard
+          |View DashBoard
     = yield
