@@ -13,6 +13,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'devise'
+gem 'react-rails', '~> 1.6.0'
 
 group :test, :development do
   gem 'sqlite3'
