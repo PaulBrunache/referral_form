@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :job_statuses
   namespace :admin do
     get 'dashboard', to: "dashboard#index"
   end

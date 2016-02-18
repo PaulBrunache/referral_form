@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160216044200) do
+ActiveRecord::Schema.define(version: 20160218220627) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -42,6 +42,13 @@ ActiveRecord::Schema.define(version: 20160216044200) do
     t.integer  "points"
   end
 
+  create_table "job_statuses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "point_value"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "recommendations", force: :cascade do |t|
     t.integer  "employee_id"
     t.string   "referral_name"
@@ -50,9 +57,10 @@ ActiveRecord::Schema.define(version: 20160216044200) do
     t.string   "position_of_interest"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.string   "status"
+    t.integer  "jobStatus_id"
   end
 
   add_index "recommendations", ["employee_id"], name: "index_recommendations_on_employee_id"
+  add_index "recommendations", ["jobStatus_id"], name: "index_recommendations_on_jobStatus_id"
 
 end

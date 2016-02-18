@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @job_status.name
+p
+  strong Point value:
+  = @job_status.point_value
+
+= link_to 'Edit', edit_job_status_path(@job_status)
+'|
+= link_to 'Back', job_statuses_path
