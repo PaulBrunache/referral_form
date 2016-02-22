@@ -1,3 +1,16 @@
+.ui.menu
+  a.item href="http://www.morselifecareers.org/"
+    i.caret.left.icon
+    |Return to Careers Home
+  / = link_to root_path, class: 'item'
+  /   i.add.user.icon
+  /   |Refer a Friend
+  = link_to destroy_admin_session_path, method: :delete , class: 'item'
+    i.add.user.icon
+    |Refer a Friend
+  = link_to admin_dashboard_path, class: 'item'
+    i.dashboard.icon
+    |Dashboard
 .ui.centered.grid.container style="margin-top: .1%"
   .nine.wide.column style="border:1px solid rgba(34,36,38,.15); border-radius: 5px;"
     == render 'form'
