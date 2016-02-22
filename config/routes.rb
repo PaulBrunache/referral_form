@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'dashboard', to: "dashboard#index"
+    get 'referral', to: "dashboard#referral"
   end
 
   devise_for :admins, path: "",

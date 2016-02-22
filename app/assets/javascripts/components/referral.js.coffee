@@ -1,7 +1,7 @@
-{div, a, h1, h2, h3,h4, p, i, table,thead, td, tr, th, tbody} = React.DOM
+{div, a, h1, h2, h3,h4, p, i, table,thead, td, tr, th, tbody, select, option} = React.DOM
 ui = React.createElement
 
-@dashboard = React.createClass
+@referral = React.createClass
   render: ->
     div className: "ui grid container",
       #hidden left menu
@@ -42,57 +42,61 @@ ui = React.createElement
       div className: "ui main grid",
         div className: "row",
           h2 className: "ui center aligned icon header",
-            i className: "blue line chart icon"
-            "Leaderboard"
+            i className: "blue add user icon"
+            "Referrals"
         div className: "row",
           div className: "top-table column",
             div className: "ui segments",
               div className: "ui segment",
-                h4 className: "ui header", "Employee Point Ranking"
+                h4 className: "ui header", "Referrals"
               div className: "ui segment",
               table className: "ui celled padded table",
                 thead null,
                   tr null,
-                    th className:"ten wide", "Employee"
-                    th className:"six wide", "Points"
+                    th className:"five wide", "Referral Name"
+                    th className:"five wide", "Email"
+                    th className:"six wide", "Status"
                 tbody null,
                   tr null,
                     td null,
                       h4 className: "ui header",
                       div className: "content",
-                        "Tiff"
-                        div className: "sub header",
-                          "human Resources"
-                    td null, "500"
-                  tr null,
+                        "hellen Campbell"
+                    td null, 
+                      h4 className: "ui header",
+                      div className: "content",
+                        "hellen@example.com"
+                    td null, 
+                      select className: "ui dropdown",
+                        option value: 1, "contacted"
+                        option value: 1, "Pending Interview"
+                        option value: 1, "Hired"
+                   tr null,
                     td null,
                       h4 className: "ui header",
                       div className: "content",
-                        "Michael"
-                        div className: "sub header",
-                          "Marketing Resources"
-                    td null, "400"
-                  tr null,
+                        "Tiff Thompson"
+                    td null, 
+                      h4 className: "ui header",
+                      div className: "content",
+                        "Tiff@example.com"
+                    td null, 
+                      select className: "ui dropdown",
+                        option value: 1, "contacted"
+                        option value: 1, "Pending Interview"
+                        option value: 1, "Hired"
+                   tr null,
                     td null,
                       h4 className: "ui header",
                       div className: "content",
-                        "Kayla"
-                        div className: "sub header",
-                          "Retention Resources"
-                    td null, "300"
-                  tr null,
-                    td null,
+                        "Jame Tough"
+                    td null, 
                       h4 className: "ui header",
                       div className: "content",
-                        "Sarah"
-                        div className: "sub header",
-                          "Tech Resources"
-                    td null, "200"
-                  tr null,
-                    td null,
-                      h4 className: "ui header",
-                      div className: "content",
-                        "James"
-                        div className: "sub header",
-                          "Tech Resources"
-                    td null, "100"
+                        "Jame@example.com"
+                    td null, 
+                      select className: "ui dropdown",
+                        option value: 1, "contacted"
+                        option value: 1, "Pending Interview"
+                        option value: 1, "Hired"
+           
