@@ -1,49 +1,24 @@
-= form_for @employee, html: {class: "ui form"} do |f|
+= form_for @employee do |f|
   - if @employee.errors.any?
     #error_explanation
       h2 = "#{pluralize(@employee.errors.count, "error")} prohibited this employee from being saved:"
       ul
         - @employee.errors.full_messages.each do |message|
           li = message
-  
-  = image_tag("background.png", class:"ui fluid image")
-  h4.ui.dividing.header Employee Information
-  .two.fields
-    .field
-      = f.label :employee_name
-      = f.text_field :employee_name, placeholder:"First and Last"
-    .field
-      = f.label :email
-      = f.text_field :email, placeholder:"Enter a valid email"
-  .three.fields
-    .field
-      = f.label "ID Number"
-      = f.text_field :work_id , placeholder:"Employee ID"
 
-    .field
-      = f.label :department
-      = f.text_field :department, placeholder:"Department"
-    .field
-      = f.label :phone_number
-      = f.text_field :phone_number, placeholder:"Enter Valid Phone number"
-  h4.ui.dividing.header Referral Information
-  
-  = f.fields_for :recommendation do |p|
-    .two.fields
-      .field
-        = p.label :referral_name
-        = p.text_field :referral_name, placeholder:"Referral name"
-      .field
-        = p.label :phone_number
-        = p.text_field :phone_number, placeholder:"Referral phone number"
-    .two.fields
-      .field
-        = p.label :email
-        = p.text_field :email, placeholder:"Referral Email"
-      .field
-        = p.label :position_of_interest
-        = p.text_field :position_of_interest, placeholder:"What position are they being referred for?"
-
-  button.ui.basic.button type= "submit" name="commit" value="Create Employee"
-    i.icon.send
-    | Send
+  .field
+    = f.label :employee_number
+    = f.text_field :employee_number
+  .field
+    = f.label :department
+    = f.text_field :department
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :phone_number
+    = f.text_field :phone_number
+  .field
+    = f.label :points
+    = f.number_field :points
+  .actions = f.submit

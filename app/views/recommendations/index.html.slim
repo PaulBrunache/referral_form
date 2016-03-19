@@ -4,10 +4,11 @@ table
   thead
     tr
       th Employee
-      th Referral name
+      th Name
       th Phone number
       th Email
-      th Position of interest
+      th Position
+      th Jobstatus
       th
       th
       th
@@ -16,10 +17,11 @@ table
     - @recommendations.each do |recommendation|
       tr
         td = recommendation.employee
-        td = recommendation.referral_name
+        td = recommendation.name
         td = recommendation.phone_number
         td = recommendation.email
-        td = recommendation.position_of_interest
+        td = recommendation.position
+        td = recommendation.JobStatus
         td = link_to 'Show', recommendation
         td = link_to 'Edit', edit_recommendation_path(recommendation)
         td = link_to 'Destroy', recommendation, data: {:confirm => 'Are you sure?'}, :method => :delete

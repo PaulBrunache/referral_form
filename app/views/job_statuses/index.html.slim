@@ -4,7 +4,7 @@ table
   thead
     tr
       th Name
-      th Point value
+      th Value
       th
       th
       th
@@ -13,7 +13,7 @@ table
     - @job_statuses.each do |job_status|
       tr
         td = job_status.name
-        td = job_status.point_value
+        td = job_status.value
         td = link_to 'Show', job_status
         td = link_to 'Edit', edit_job_status_path(job_status)
         td = link_to 'Destroy', job_status, data: {:confirm => 'Are you sure?'}, :method => :delete

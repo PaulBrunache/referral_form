@@ -4,8 +4,8 @@ p
   strong Employee:
   = @recommendation.employee
 p
-  strong Referral name:
-  = @recommendation.referral_name
+  strong Name:
+  = @recommendation.name
 p
   strong Phone number:
   = @recommendation.phone_number
@@ -13,8 +13,11 @@ p
   strong Email:
   = @recommendation.email
 p
-  strong Position of interest:
-  = @recommendation.position_of_interest
+  strong Position:
+  = @recommendation.position
+p
+  strong Jobstatus:
+  = @recommendation.JobStatus
 
 = link_to 'Edit', edit_recommendation_path(@recommendation)
 '|

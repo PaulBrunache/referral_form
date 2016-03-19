@@ -18,7 +18,7 @@ class RecommendationsControllerTest < ActionController::TestCase
 
   test "should create recommendation" do
     assert_difference('Recommendation.count') do
-      post :create, recommendation: { email: @recommendation.email, employee_id: @recommendation.employee_id, phone_number: @recommendation.phone_number, position_of_interest: @recommendation.position_of_interest, referral_name: @recommendation.referral_name }
+      post :create, recommendation: { JobStatus_id: @recommendation.JobStatus_id, email: @recommendation.email, employee_id: @recommendation.employee_id, name: @recommendation.name, phone_number: @recommendation.phone_number, position_id: @recommendation.position_id }
     end
 
     assert_redirected_to recommendation_path(assigns(:recommendation))
@@ -35,7 +35,7 @@ class RecommendationsControllerTest < ActionController::TestCase
   end
 
   test "should update recommendation" do
-    patch :update, id: @recommendation, recommendation: { email: @recommendation.email, employee_id: @recommendation.employee_id, phone_number: @recommendation.phone_number, position_of_interest: @recommendation.position_of_interest, referral_name: @recommendation.referral_name }
+    patch :update, id: @recommendation, recommendation: { JobStatus_id: @recommendation.JobStatus_id, email: @recommendation.email, employee_id: @recommendation.employee_id, name: @recommendation.name, phone_number: @recommendation.phone_number, position_id: @recommendation.position_id }
     assert_redirected_to recommendation_path(assigns(:recommendation))
   end
 

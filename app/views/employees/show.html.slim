@@ -1,11 +1,8 @@
 p#notice = notice
 
 p
-  strong Employee name:
-  = @employee.employee_name
-p
-  strong Work:
-  = @employee.work_id
+  strong Employee number:
+  = @employee.employee_number
 p
   strong Department:
   = @employee.department
@@ -15,6 +12,9 @@ p
 p
   strong Phone number:
   = @employee.phone_number
+p
+  strong Points:
+  = @employee.points
 
 = link_to 'Edit', edit_employee_path(@employee)
 '|

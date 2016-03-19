@@ -2,14 +2,16 @@
 
 one:
   employee_id: 
-  referral_name: MyString
+  name: MyString
   phone_number: MyString
   email: MyString
-  position_of_interest: MyString
+  position_id: 
+  JobStatus_id: 
 
 two:
   employee_id: 
-  referral_name: MyString
+  name: MyString
   phone_number: MyString
   email: MyString
-  position_of_interest: MyString
+  position_id: 
+  JobStatus_id: 

@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @position.name
+p
+  strong Description:
+  = @position.description
+
+= link_to 'Edit', edit_position_path(@position)
+'|
+= link_to 'Back', positions_path

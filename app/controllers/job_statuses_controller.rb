@@ -53,6 +53,6 @@ class JobStatusesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def job_status_params
-      params.require(:job_status).permit(:name, :point_value)
+      params.require(:job_status).permit(:name, :value)
     end
 end

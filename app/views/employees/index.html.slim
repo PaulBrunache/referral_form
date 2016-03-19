@@ -3,11 +3,11 @@ h1 Listing employees
 table
   thead
     tr
-      th Employee name
-      th Work
+      th Employee number
       th Department
       th Email
       th Phone number
+      th Points
       th
       th
       th
@@ -15,11 +15,11 @@ table
   tbody
     - @employees.each do |employee|
       tr
-        td = employee.employee_name
-        td = employee.work_id
+        td = employee.employee_number
         td = employee.department
         td = employee.email
         td = employee.phone_number
+        td = employee.points
         td = link_to 'Show', employee
         td = link_to 'Edit', edit_employee_path(employee)
         td = link_to 'Destroy', employee, data: {:confirm => 'Are you sure?'}, :method => :delete

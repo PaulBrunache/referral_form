@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :positions
+  resources :job_statuses
+  resources :recommendations
+  resources :employees
   resources :job_statuses
 
   namespace :admin do
