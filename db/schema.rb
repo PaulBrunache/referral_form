@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218220627) do
+ActiveRecord::Schema.define(version: 20160319170829) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,36 +31,52 @@ ActiveRecord::Schema.define(version: 20160218220627) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "departments", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "employees", force: :cascade do |t|
-    t.string   "employee_name"
-    t.string   "work_id"
-    t.string   "department"
+    t.string   "employee_number"
+    t.integer  "department_id"
     t.string   "email"
     t.string   "phone_number"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
     t.integer  "points"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
+
+  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
 
   create_table "job_statuses", force: :cascade do |t|
     t.string   "name"
-    t.integer  "point_value"
+    t.integer  "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "positions", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "recommendations", force: :cascade do |t|
     t.integer  "employee_id"
-    t.string   "referral_name"
+    t.string   "name"
     t.string   "phone_number"
     t.string   "email"
-    t.string   "position_of_interest"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "jobStatus_id"
+    t.string   "last_updated_by"
+    t.integer  "position_id"
+    t.integer  "JobStatus_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
+  add_index "recommendations", ["JobStatus_id"], name: "index_recommendations_on_JobStatus_id"
   add_index "recommendations", ["employee_id"], name: "index_recommendations_on_employee_id"
-  add_index "recommendations", ["jobStatus_id"], name: "index_recommendations_on_jobStatus_id"
+  add_index "recommendations", ["position_id"], name: "index_recommendations_on_position_id"
 
 end

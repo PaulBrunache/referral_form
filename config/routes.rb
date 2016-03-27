@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'pages/home'
+
+  resources :departments
   resources :positions
   resources :job_statuses
   resources :recommendations
@@ -18,8 +21,5 @@ Rails.application.routes.draw do
   #   root to: "admin/dashboard#index" # This is the root path of the user when you are logged in
   # end
 
-  root to: "employees#new", as: "default_home"
-
-  resources :recommendations
-  resources :employees
+  root to: "admin/dashboard#index"
 end
