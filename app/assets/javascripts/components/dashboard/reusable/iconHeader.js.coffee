@@ -2,9 +2,7 @@
 ui = React.createElement
 
 @iconHeader = React.createClass
-
   render: ->
-    div className: "row",
-          h2 className: "ui center aligned icon header",
-            i className: @props.icon_class
-            @props.icon_text
+    h2 className: "ui center aligned icon header",
+      i className: @props.icon_class
+      @props.icon_text
