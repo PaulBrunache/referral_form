@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root to:'pages#home'
-
+  get 'verify', to: 'pages#verify_user'
   resources :departments
   resources :positions
   resources :job_statuses

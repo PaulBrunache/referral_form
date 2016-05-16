@@ -1,1 +1,45 @@
-= react_component('home')
+.ui.menu
+  a.item href="http://www.morselifecareers.org/" 
+    i.caret.left.icon
+    | Return to Careers Home
+  a.item data-method="delete" href="/sign_out" rel="nofollow" 
+    i.add.user.icon
+    | Refer a Friend
+  a.item href="/admin/dashboard" 
+    i.dashboard.icon
+    | Dashboard
+
+#authorize-container.ui.centered.grid.container
+  .nine.wide.column.custom-border
+    = image_tag("background.png", height: '100%', width: '100%', class:"ui fluid image shadow")
+  #authorize-form.nine.wide.column
+    = form_tag verify_path do
+      .ui.two.column.middle.aligned.very.relaxed.stackable.grid
+        .column
+          .ui.form
+            .field
+              h4.ui.dividing.header Employee
+              .ui.left.icon.input
+                input placeholder="Email" type="text" /
+                i.user.icon
+        .ui.vertical.divider
+          | Or
+        .column
+          .ui.form
+            .field
+              h4.ui.dividing.header Administrator
+              .ui.left.icon.input
+                input placeholder="Email" type="text" /
+                i.user.icon
+            .field
+              label Password
+              .ui.left.icon.input
+                input placeholder="Password" type="password" /
+                i.lock.icon
+        .column
+           .ui.basic.submit.button type= "submit" name="commit" 
+             i.icon.send
+             |Verify
+
+
+                
