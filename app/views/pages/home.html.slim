@@ -2,12 +2,12 @@
   a.item href="http://www.morselifecareers.org/" 
     i.caret.left.icon
     | Return to Careers Home
-  a.item data-method="delete" href="/sign_out" rel="nofollow" 
-    i.add.user.icon
-    | Refer a Friend
-  a.item href="/admin/dashboard" 
-    i.dashboard.icon
-    | Dashboard
+  / a.item data-method="delete" href="/sign_out" rel="nofollow" 
+  /   i.add.user.icon
+  /   | Refer a Friend
+  / a.item href="/admin/dashboard" 
+  /   i.dashboard.icon
+  /   | Dashboard
 
 #authorize-container.ui.centered.grid.container
   .nine.wide.column.custom-border
@@ -20,7 +20,7 @@
             .field
               h4.ui.dividing.header Employees
               .ui.left.icon.input
-                input placeholder="Email" type="text" /
+                = email_field_tag 'employee_email', nil, placeholder: 'Enter your Email'
                 i.user.icon
         .ui.vertical.divider
           | Or
@@ -29,15 +29,14 @@
             .field
               h4.ui.dividing.header Administrators
               .ui.left.icon.input
-                input placeholder="Email" type="text" /
+                = email_field_tag 'admin_email', nil,placeholder: 'Enter your Email'
                 i.user.icon
             .field
-              label Password
               .ui.left.icon.input
-                input placeholder="Password" type="password" /
+                = password_field_tag 'password', nil,placeholder: 'Enter your password'
                 i.lock.icon
         .column
-           button.ui.basic.submit.button name="commit" type="submit" value="Submit" 
+           button.ui.basic.submit.button name="send" type="submit"
              i.icon.send
              |Login / Register
 
