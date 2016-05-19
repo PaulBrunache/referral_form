@@ -54,7 +54,7 @@ ui = React.createElement
           i className: "settings icon"
 
           "Manage Admins"
-        a href: "/",  className:"item",
+        a href: "/sign_out",  className:"item",
           i className: "lock icon"
           "Logout"
 

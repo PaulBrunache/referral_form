@@ -8,3 +8,4 @@ ui = React.createElement
         div className: "ui main grid", style: {marginTop: '1%'},
           div className: "row",
             ui iconHeader, icon_text: "manageAdmins", icon_class: "blue line chart icon"
+            
