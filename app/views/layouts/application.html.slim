@@ -7,4 +7,14 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = yield
+    - if params[:controller].downcase == 'admin/dashboard'
+      .ui.grid.container
+        == render 'layouts/admin_menu'
+        .ui.container
+          = yield
+    - else 
+      == render 'layouts/menu'
+      = yield
+    
+      
+        

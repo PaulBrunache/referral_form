@@ -15,10 +15,9 @@ Rails.application.routes.draw do
     get 'manage-admins', to: "dashboard#manage_admins"
     get 'leaderboard', to: "dashboard#leaderboard"
   end
-  get 'logout', to: 'devise/sessions#destroy', as: :signout
 
   devise_for :admins, path: "",
-  path_names: { sign_in: 'admin', sign_up: 'add-admin' }
+  path_names: { sign_in: 'admin', sign_up: 'add-admin', sign_out: 'logout' }
 
   # devise_scope :admins do
   #   root to: "admin/dashboard#index" # This is the root path of the user when you are logged in

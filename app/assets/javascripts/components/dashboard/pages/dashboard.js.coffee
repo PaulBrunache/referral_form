@@ -4,8 +4,23 @@ ui = React.createElement
 @dashboard = React.createClass
 
   render: ->
-    div className: "ui grid container",
-      ui menu
-      div className: "ui main grid", style: {marginTop: '1%'},
-        div className: "row",
-          ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+    div className: "row",
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+      
