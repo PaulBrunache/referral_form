@@ -2,25 +2,7 @@
 ui = React.createElement
 
 @dashboard = React.createClass
-
   render: ->
-    div className: "row",
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
-      ui iconHeader, icon_text: "dashboard", icon_class: "blue line chart icon"
+    div className: "ui segment",
       
+        ui iconHeader, icon_text: "manageAdmins", icon_class: "blue line chart icon"
