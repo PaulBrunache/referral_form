@@ -9,9 +9,11 @@ html
   body
     - if params[:controller].downcase == 'admin/dashboard'
       .ui.grid.container
-        == render 'layouts/admin_menu'
-        .ui.container
-          = yield
+        .row
+          .three.wide.column
+            == render 'layouts/admin_menu'
+          .thirteen.wide.column
+            = yield
     - else 
       == render 'layouts/menu'
       = yield

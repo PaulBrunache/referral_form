@@ -3,5 +3,5 @@ ui = React.createElement
 
 @manageAdmins = React.createClass
   render: ->
-    div className: "row",
+    div className: "ui segment",
       ui iconHeader, icon_text: "manageAdmins", icon_class: "blue line chart icon"

@@ -3,6 +3,6 @@ ui = React.createElement
 
 @iconHeader = React.createClass
   render: ->
-    h2 className: "ui center aligned icon header",
+    h3 className: "ui center aligned icon header",
       i className: @props.icon_class
       @props.icon_text

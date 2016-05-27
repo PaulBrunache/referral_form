@@ -3,5 +3,5 @@ ui = React.createElement
 
 @referrals = React.createClass
   render: ->
-    div className: "row", style: {marginTop: '1%'},
+    div className: "ui segment",
       ui iconHeader, icon_text: "referrals", icon_class: "blue line chart icon"
