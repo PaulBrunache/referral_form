@@ -3,43 +3,56 @@
     h4.center.aligned.ui.header Welcome To your referral panel
     h1.center.aligned.ui.gray.header  
      i.users.icon
-    
-  = link_to admin_dashboard_path, class: "active item" do
-    Dashboard
-    i.sitemap.icon
   = link_to admin_leaderboard_path, class: "item" do
     i.idea.icon
   = link_to admin_referrals_path, class: "item" do
     i.settings.icon
     Hello
-  = link_to admin_manage_admins_path, class: "item" do
-    i.settings.icon
+  .ui.left.pointing.dropdown.link.item
+    i.dropdown.icon
+    | Manage Admins
+    .menu
+      = link_to admin_new_path, class: "item"
+        i.add.icon
+        |Create Admin 
+        
+      = link_to admin_edit_path, class: "item"
+        i.pencil.icon
+        |Edit Admins 
   = link_to destroy_admin_session_path, class: "item" do
     i.lock.icon
   
 
 
-#admin-menu.ui.left.fixed.small.icon.vertical.menu
+#admin-menu.ui.left.fixed.medium.vertical.menu
   .item
-    h4.center.aligned.ui.header Welcome To your refferal panel
+    h4.center.aligned.ui.header Welcome To your referral panel
     h1.center.aligned.ui.gray.header  
      i.users.icon
-  = link_to admin_dashboard_path, class: "item"
-    i.sitemap.icon 
-    | Dashboard
   = link_to admin_leaderboard_path, class: "item"
-    i.idea.icon
+    i.sitemap.icon
     | Leaderboard
   = link_to admin_referrals_path, class: "item"
-    i.settings.icon
     | Referrals
-  = link_to admin_manage_admins_path, class: "item"
-    i.settings.icon
+    div.ui.blue.label 7
+  .ui.left.pointing.dropdown.link.item
+    i.dropdown.icon
     | Manage Admins
+    .menu
+      = link_to admin_new_path, class: "item"
+        i.add.icon
+        |Create Admin 
+        
+      = link_to admin_edit_path, class: "item"
+        i.pencil.icon
+        |Edit Admins   
+        
+
+      
   = link_to destroy_admin_session_path, method: :delete, class: "item"
     i.lock.icon
     | Logout
-      
+
 
 #admin_hidden_menu.ui.fixed.main.menu
   a.launch.icon.item.sidebar-toggle

@@ -3,5 +3,6 @@ ui = React.createElement
 
 @referrals = React.createClass
   render: ->
-    div className: "ui segment",
-      ui iconHeader, icon_text: "referrals", icon_class: "blue line chart icon"
+    div className: "ui container",
+      div className: "ui segment",
+        ui iconHeader, icon_text: "referrals", icon_class: "blue line chart icon"

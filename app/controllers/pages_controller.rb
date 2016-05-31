@@ -30,7 +30,7 @@ class PagesController < ApplicationController
       if  found_user?(admin, true)
         puts "ok\n"
         sign_in(:user, Admin.find_by_email(params[:admin_email]))
-        redirect_to admin_dashboard_path
+        redirect_to admin_leaderboard_path
       else
         puts "No\n"
         render :home

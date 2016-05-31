@@ -3,7 +3,9 @@ class Admin::DashboardController < ApplicationController
   end
   def referrals
   end
-  def manage_admins
+  def edit_admin
+  end
+  def new_admin
   end
   def leaderboard
   end

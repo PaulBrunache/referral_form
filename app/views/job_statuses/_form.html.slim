@@ -10,6 +10,10 @@
     = f.label :name
     = f.text_field :name
   .field
-    = f.label :value
-    = f.number_field :value
+    = f.label :password
+    = f.number_field :password
+    
+  .field
+    = f.label :password
+    = f.password_field :password_confirmation, autocomplete: "off"
   .actions = f.submit
