@@ -4,8 +4,10 @@ class Admin::DashboardController < ApplicationController
   def referrals
   end
   def edit_admin
+
   end
   def new_admin
+    puts "#{params}"
   end
   def leaderboard
   end

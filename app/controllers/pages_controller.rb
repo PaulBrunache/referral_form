@@ -40,12 +40,12 @@ class PagesController < ApplicationController
     end
   end
 
-    def found_user?(param,admin=false)
-      puts "#{param}\n\n#{admin}"
-      if admin
-        Admin.where(email: param[:email]).first.try(:valid_password?, param[:password])
-      else
-        Employee.where(email: param)
-      end
+  def found_user?(param,admin=false)
+    puts "#{param}\n\n#{admin}"
+    if admin
+      Admin.where(email: param[:email]).first.try(:valid_password?, param[:password])
+    else
+      Employee.where(email: param)
     end
+  end
 end

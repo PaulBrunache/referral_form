@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to:'pages#home'
   post 'verify', to: 'pages#authenticate_user'
+  post 'admin/new', to: 'admin/dashboard#new_admin'
   resources :departments
   resources :positions
   resources :job_statuses
@@ -17,12 +18,7 @@ Rails.application.routes.draw do
     get 'leaderboard', to: "dashboard#leaderboard"
   end
 
-  devise_for :admins, path: "",
+  devise_for :admins,
   path_names: { sign_in: 'admin',sign_out: 'logout' }
 
-  # devise_scope :admins do
-  #   root to: "admin/dashboard#index" # This is the root path of the user when you are logged in
-  # end
-
-  # root to: "admin/dashboard#index"
 end
