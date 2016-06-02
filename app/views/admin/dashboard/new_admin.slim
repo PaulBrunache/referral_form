@@ -1,0 +1,29 @@
+.ui.container
+  .ui.segment
+    h3.ui.center.aligned.icon.header
+      i.add.user.blue.icon
+      |Create Admin
+  .ui.segment
+  
+    = form_tag verify_path do
+      .ui.two.column.centered.middle.aligned.very.relaxed.stackable.grid
+        .column
+          .ui.form
+            .field
+              h4.ui.dividing.header Administrators
+              .ui.left.icon.input
+                = email_field_tag 'admin_email', nil,placeholder: 'Enter your Email'
+                i.user.icon
+            .field
+              .ui.left.icon.input
+                = password_field_tag 'password', nil,placeholder: 'Enter a password'
+                i.lock.icon
+            .field
+              .ui.left.icon.input
+                = password_field_tag 'password_confirmation', nil,placeholder: 'Confirm password'
+                i.lock.icon
+            .field
+               button.ui.basic.submit.button name="send" type="submit"
+                 i.icon.send
+                 |Create User
+        
