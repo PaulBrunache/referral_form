@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     get 'leaderboard', to: "dashboard#leaderboard"
   end
 
-  devise_for :admins,
+  devise_for :admins, path: "",
   path_names: { sign_in: 'admin',sign_out: 'logout' }
 
 end

@@ -3,14 +3,23 @@
     h3.ui.center.aligned.icon.header
       i.add.user.blue.icon
       |Create Admin
-  .ui.segment
   
-    = form_tag verify_path do
+  .ui.segment
+    - if !@error_message.blank?
+      .ui.info.message
+        - flash.each do |key, value|
+          .header 
+            #{value}
+        
+        
+
+  
+    = form_tag admin_new_path do
       .ui.two.column.centered.middle.aligned.very.relaxed.stackable.grid
         .column
           .ui.form
             .field
-              h4.ui.dividing.header Administrators
+              h4.ui.dividing.header Create A New Administrators
               .ui.left.icon.input
                 = email_field_tag 'admin_email', nil,placeholder: 'Enter your Email'
                 i.user.icon
