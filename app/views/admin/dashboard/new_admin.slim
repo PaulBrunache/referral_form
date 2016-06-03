@@ -3,18 +3,18 @@
     h3.ui.center.aligned.icon.header
       i.add.user.blue.icon
       |Create Admin
-  
-  .ui.segment
-    - if !@error_message.blank?
-      .ui.info.message
-        - flash.each do |key, value|
-          .header 
-            #{value}
-        
-        
 
+        
+    - if @admin.errors.any?
+      .ui.error.message
+        i.close.icon
+        .header  = "#{pluralize(@admin.errors.count, "error")} prohibited the Admin from being created:"
+        ul.list
+          - @admin.errors.full_messages.each do |message|
+            li = message
   
-    = form_tag admin_new_path do
+  = form_tag validate_admin_path do
+    .ui.segment
       .ui.two.column.centered.middle.aligned.very.relaxed.stackable.grid
         .column
           .ui.form

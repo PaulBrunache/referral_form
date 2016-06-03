@@ -2,7 +2,7 @@
   .nine.wide.column.custom-border
     = image_tag("background.png", height: '100%', width: '100%', class:"ui fluid image shadow")
   #authorize-form.nine.wide.column
-    = form_tag verify_path do
+    = form_tag authenticate_user_path do
       .ui.two.column.middle.aligned.very.relaxed.stackable.grid
         .column
           .ui.form
