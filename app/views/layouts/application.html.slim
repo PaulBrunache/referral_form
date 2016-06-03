@@ -13,9 +13,17 @@ html
           .three.wide.column
             == render 'layouts/admin_menu'
           .thirteen.wide.column
+            - flash.each do |name, msg|
+              .ui.segment
+                = content_tag :div, msg, class: "ui huge #{name} middle aligned message" 
             = yield
     - else 
       == render 'layouts/menu'
+      - flash.each do |name, msg|
+        .ui.two.column.centered.middle.aligned
+          .column
+            .ui.segment
+              = content_tag :div, msg, class: "ui huge middle aligned #{name} message" 
       = yield
     
       

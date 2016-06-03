@@ -24,9 +24,8 @@ class Admin::DashboardController < ApplicationController
       @admin.save!
       flash[:success] = "Admin was successfully created"
     rescue 
-      puts "\n\nsomething: #{@admin.errors.full_messages}\n\n"
-      render :new_admin
       flash[:info] = "Admin was not created please view errors below"
+      render :new_admin
     end
   end
 

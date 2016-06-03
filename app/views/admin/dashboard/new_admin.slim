@@ -3,15 +3,27 @@
     h3.ui.center.aligned.icon.header
       i.add.user.blue.icon
       |Create Admin
-
-        
-    - if @admin.errors.any?
+    
+  - if @admin.errors.any?
+    .ui.segment
       .ui.error.message
-        i.close.icon
         .header  = "#{pluralize(@admin.errors.count, "error")} prohibited the Admin from being created:"
         ul.list
           - @admin.errors.full_messages.each do |message|
             li = message
+  - else 
+    .ui.segment
+      .ui.info.message
+        .header
+        | Admin Creation Instructions
+        ul.list 
+          li 
+            |Admin password must be a minimum of 6 characters long 
+          li 
+            |No fields can be ommitted 
+          li 
+            |Passwords must match
+      
   
   = form_tag validate_admin_path do
     .ui.segment

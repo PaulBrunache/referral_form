@@ -10,7 +10,6 @@ class PagesController < ApplicationController
   end
 
   def authenticate_user
-    puts "in method\n"
     employee = params[:employee_email]
     admin =
     {
@@ -22,26 +21,26 @@ class PagesController < ApplicationController
       if  found_user?(employee)
 
       else
+        flash[:error] = "Registration required"
         render :employee_registration
       end
     elsif !params[:admin_email].blank? && !params[:password].blank?
-      puts "admin\n\n"
-      puts "#{found_user?(admin, true)}\n\n"
+    
       if  found_user?(admin, true)
-        puts "ok\n"
+        flash[:info] = "You have successfully signed in, Welcome to your Admin Panel"
         sign_in(:user, Admin.find_by_email(params[:admin_email]))
         redirect_to admin_leaderboard_path
       else
-        puts "No\n"
+        flash[:error] = "Your email/password is incorrect. Please make sure your account was created by an admin prior to signing in"
         render :home
       end
     else
+      flash[:warning] = "Please fill out the form below prior to submitting"
       render :home
     end
   end
 
   def found_user?(param,admin=false)
-    puts "#{param}\n\n#{admin}"
     if admin
       Admin.where(email: param[:email]).first.try(:valid_password?, param[:password])
     else
