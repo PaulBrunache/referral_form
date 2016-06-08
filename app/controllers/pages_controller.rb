@@ -3,12 +3,6 @@ class PagesController < ApplicationController
   end
   def dashboard
   end
-  def employee_registration
-  end
-  def referrals
-
-  end
-
   def authenticate_user
     employee = params[:employee_email]
     admin =
@@ -19,13 +13,15 @@ class PagesController < ApplicationController
 
     if !params[:employee_email].blank?
       if  found_user?(employee)
-
+        session[:current_employee] = employee
+        flash[:info] = "Welcome Back"
+        redirect_to new_recommendation_path
       else
-        flash[:error] = "Registration required"
-        render :employee_registration
+        flash[:warning] = "Registration required"
+        redirect_to new_employee_path
       end
     elsif !params[:admin_email].blank? && !params[:password].blank?
-    
+
       if  found_user?(admin, true)
         flash[:info] = "You have successfully signed in, Welcome to your Admin Panel"
         sign_in(:user, Admin.find_by_email(params[:admin_email]))
@@ -42,9 +38,14 @@ class PagesController < ApplicationController
 
   def found_user?(param,admin=false)
     if admin
-      Admin.where(email: param[:email]).first.try(:valid_password?, param[:password])
+      user = Admin.where(email: param[:email]).first.try(:valid_password?, param[:password])
     else
-      Employee.where(email: param)
+      user = Employee.where(email: param).first
+    end
+    if user.nil?
+      false
+    else
+      true
     end
   end
 end

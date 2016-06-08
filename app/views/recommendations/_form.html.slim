@@ -1,27 +1,28 @@
 = form_for @recommendation do |f|
   - if @recommendation.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@recommendation.errors.count, "error")} prohibited this recommendation from being saved:"
-      ul
+    .ui.error.message
+      .header = "#{pluralize(@recommendation.errors.count, "error")} prohibited this recommendation from being saved:"
+      ul.list
         - @recommendation.errors.full_messages.each do |message|
           li = message
-
-  .field
-    = f.label :employee
-    = f.text_field :employee
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :phone_number
-    = f.text_field :phone_number
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :position
-    = f.text_field :position
-  .field
-    = f.label :JobStatus
-    = f.text_field :JobStatus
-  .actions = f.submit
+  .ui.two.column.middle.aligned.very.relaxed.stackable.grid
+    .column
+      .ui.form
+        .two.fields
+          .field
+            = f.label :name
+            = f.text_field :name
+          .field
+            = f.label :phone_number
+            = f.text_field :phone_number
+        .two.fields
+          .field
+            = f.label :email
+            = f.email_field :email
+          .field
+            = f.label :position
+            = f.text_field :position
+        .column
+          button.ui.basic.submit.button name="send" type="submit"
+            i.icon.send
+            |Send

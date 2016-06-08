@@ -15,7 +15,7 @@ html
           .thirteen.wide.column
             - flash.each do |name, msg|
               .ui.segment
-                = content_tag :div, msg, class: "ui huge #{name} middle aligned message" 
+                = content_tag :div, msg, class: "ui large #{name} middle aligned message" 
             = yield
     - else 
       == render 'layouts/menu'
@@ -23,8 +23,12 @@ html
         .ui.two.column.centered.middle.aligned
           .column
             .ui.segment
-              = content_tag :div, msg, class: "ui huge middle aligned #{name} message" 
-      = yield
+              = content_tag :div, msg, class: "ui large middle aligned #{name} message" 
+      #authorize-container.ui.centered.grid.container
+        .nine.wide.column.custom-border
+          = image_tag("background.png", height: '100%', width: '100%', class:"ui fluid image shadow")
+        #authorize-form.nine.wide.column
+          = yield
     
       
         

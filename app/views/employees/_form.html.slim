@@ -1,24 +1,31 @@
 = form_for @employee do |f|
   - if @employee.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@employee.errors.count, "error")} prohibited this employee from being saved:"
-      ul
+    .ui.error.message
+      .header = "#{pluralize(@employee.errors.count, "error")} prohibited this employee from being saved:"
+      ul.list
         - @employee.errors.full_messages.each do |message|
           li = message
+  .ui.middle.aligned.very.relaxed.stackable.grid
+    .column
+      .ui.form
+        .two.fields
+          .field
+            = f.label :employee_number
+            = f.text_field :employee_number
+          .field.
+            = f.label :department
+            = f.text_field :department
+        .two.fields
+          .field
+            = f.label :email
+            = f.email_field :email
+          .field
+            = f.label :phone_number
+            = f.text_field :phone_number
+        .column
+          button.ui.basic.submit.button name="send" type="submit"
+            i.icon.send
+            |Register
 
-  .field
-    = f.label :employee_number
-    = f.text_field :employee_number
-  .field
-    = f.label :department
-    = f.text_field :department
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :phone_number
-    = f.text_field :phone_number
-  .field
-    = f.label :points
-    = f.number_field :points
-  .actions = f.submit
+        
+    

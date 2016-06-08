@@ -24,7 +24,9 @@ class EmployeesController < ApplicationController
     @employee = Employee.new(employee_params)
 
     if @employee.save
-      redirect_to @employee, notice: 'Employee was successfully created.'
+      session[:current_employee] = @employee.email
+      flash[:success]= "Your account was successfully created"
+      redirect_to new_recommendation_path
     else
       render :new
     end
