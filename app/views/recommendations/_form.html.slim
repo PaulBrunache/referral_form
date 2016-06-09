@@ -13,9 +13,8 @@
         | Refer a friend Instructions
         ul.list 
           li 
-            |All fields are required
-          li 
-            |Please provide t
+            |Please fill out all fields
+        
 
   .ui.middle.aligned.very.relaxed.stackable.grid
     .column
@@ -33,7 +32,7 @@
             = f.email_field :email
           .field.required
             = f.label :position
-            = f.text_field :position
+            = f.collection_select :position_id, Position.all, :id, :name, {prompt: "Select Position"}, {class: "ui dropdown"}
         .column
           button.ui.basic.submit.button name="send" type="submit"
             i.icon.send

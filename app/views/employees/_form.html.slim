@@ -13,21 +13,18 @@
         | Admin Creation Instructions
         ul.list 
           li 
-            |Admin password must be a minimum of 6 characters long 
-          li 
-            |No fields can be ommitted 
-          li 
-            |Passwords must match
+            |Please fill out all fields
+            
   .ui.middle.aligned.very.relaxed.stackable.grid
     .column
       .ui.form
-        .two.fields
+        .two.fields.required
           .field.required
             = f.label :employee_number
             = f.text_field :employee_number
           .field.required
             = f.label :department
-            = f.collection_select :department_id, Department.all, :id, :name, {prompt: "Select/Type Department"}, {class: "ui dropdown cookies and vani"}
+            = f.collection_select :department_id, Department.all, :id, :name, {prompt: "Select a Department"}, {class: "ui dropdown"}
         .two.fields
           .field.required
             = f.label :email
