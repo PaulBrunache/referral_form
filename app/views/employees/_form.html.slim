@@ -1,10 +1,23 @@
 = form_for @employee do |f|
   - if @employee.errors.any?
-    .ui.error.message
-      .header = "#{pluralize(@employee.errors.count, "error")} prohibited this employee from being saved:"
-      ul.list
-        - @employee.errors.full_messages.each do |message|
-          li = message
+    .ui.segment
+      .ui.error.message
+        .header = "#{pluralize(@employee.errors.count, "error")} prohibited this employee from being saved:"
+        ul.list
+          - @employee.errors.full_messages.each do |message|
+            li = message
+  - else 
+    .ui.segment
+      .ui.info.message
+        .header
+        | Admin Creation Instructions
+        ul.list 
+          li 
+            |Admin password must be a minimum of 6 characters long 
+          li 
+            |No fields can be ommitted 
+          li 
+            |Passwords must match
   .ui.middle.aligned.very.relaxed.stackable.grid
     .column
       .ui.form

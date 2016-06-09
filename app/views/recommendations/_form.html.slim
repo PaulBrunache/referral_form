@@ -1,25 +1,37 @@
 = form_for @recommendation do |f|
   - if @recommendation.errors.any?
-    .ui.error.message
-      .header = "#{pluralize(@recommendation.errors.count, "error")} prohibited this recommendation from being saved:"
-      ul.list
-        - @recommendation.errors.full_messages.each do |message|
-          li = message
-  .ui.two.column.middle.aligned.very.relaxed.stackable.grid
+    .ui.segment
+      .ui.error.message
+        .header = "#{pluralize(@recommendation.errors.count, "error")} prohibited this recommendation from being saved:"
+        ul.list
+          - @recommendation.errors.full_messages.each do |message|
+            li = message
+  - else 
+    .ui.segment
+      .ui.info.message
+        .header
+        | Refer a friend Instructions
+        ul.list 
+          li 
+            |All fields are required
+          li 
+            |Please provide t
+
+  .ui.middle.aligned.very.relaxed.stackable.grid
     .column
       .ui.form
         .two.fields
-          .field
+          .field.required
             = f.label :name
             = f.text_field :name
-          .field
+          .field.required
             = f.label :phone_number
             = f.text_field :phone_number
         .two.fields
-          .field
+          .field.required
             = f.label :email
             = f.email_field :email
-          .field
+          .field.required
             = f.label :position
             = f.text_field :position
         .column
