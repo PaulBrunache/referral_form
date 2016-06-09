@@ -9,17 +9,17 @@
     .column
       .ui.form
         .two.fields
-          .field
+          .field.required
             = f.label :employee_number
             = f.text_field :employee_number
-          .field.
+          .field.required
             = f.label :department
-            = f.text_field :department
+            = f.collection_select :department_id, Department.all, :id, :name, {prompt: "Select/Type Department"}, {class: "ui dropdown cookies and vani"}
         .two.fields
-          .field
+          .field.required
             = f.label :email
             = f.email_field :email
-          .field
+          .field.required
             = f.label :phone_number
             = f.text_field :phone_number
         .column
