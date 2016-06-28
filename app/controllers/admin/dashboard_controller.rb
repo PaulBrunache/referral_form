@@ -10,7 +10,7 @@ class Admin::DashboardController < ApplicationController
   end
 
   def edit_admin
-
+    @admin = Admin.all 
   end
 
   def new_admin
