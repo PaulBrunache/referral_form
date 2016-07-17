@@ -37,15 +37,16 @@ class PagesController < ApplicationController
   end
 
   def found_user?(param,admin=false)
+    
     if admin
       user = Admin.where(email: param[:email]).first.try(:valid_password?, param[:password])
     else
       user = Employee.where(email: param).first
     end
-    if user.nil?
-      false
-    else
+    if user
       true
+    else
+      false
     end
   end
 end
