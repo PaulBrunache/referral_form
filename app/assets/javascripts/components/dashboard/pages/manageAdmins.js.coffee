@@ -1,15 +1,38 @@
-{div, a, h1, h2, h3,h4, p, i, ul, li, table,thead, td, tr, th, tbody, button,label, span, input} = React.DOM
+{div, a, h1, h2, h3,h4, p, i, ul, li, table,thead, td, tr, th, tbody, button,label, span, p, input} = React.DOM
 ui = React.createElement
-user_indentification = null
+
+
 
 @manageAdmins = React.createClass
 
-
-  updateClicked: (id, e)->
-    user_indentification = $('.text span').text()
+  getInitialState: ->
+    user_indentification: ''
+    
+  resetClicked: ->
+    @setState user_indentification:  $('.text span').text()
+    $('#reset_password').modal('show')
+    
+  updateClicked: ->
+    @setState user_indentification: $('.text span').text()
     $('#update_email').modal('show')
-
-
+    
+  sendPasswordReset: (e)->
+    e.preventDefault()
+    
+    $.ajax
+        method: 'POST'
+        url: "/reset_admin"
+        data: 
+          email: @state.user_indentification
+        dataType: 'JSON'
+        error: (jqXHR, textStatus, errorThrown) ->
+            console.log(errorThrown)
+            console.log(jqXHR)
+            
+        success: (data, textStatus, jqXHR) ->
+            $('body').append "Successful AJAX call: #{data}"
+            
+    
 
 
   render: ->
@@ -17,14 +40,20 @@ user_indentification = null
       div className: "ui segment",
         ui iconHeader, icon_text: "manageAdmins", icon_class: "blue line chart icon"
 
-      div className: "ui modal", id: "reset_password",
-        div className: "header",
-            "ok"
-            div className: "ui form",
-              div className: "field",
-                label null, "Reset Password"
-                input placeholder: user_indentification
-
+      div className: "ui modal small transition", id: "reset_password",
+        div className: "header", "Reset Account password"
+      
+        div className: "content", 
+          p null, "Are you sure you want to reset the account password for " + @state.user_indentification
+      
+        div className: "actions",
+          div className: "ui negative button", 
+            "No"
+          
+          div className: "ui positive right labeled icon button", onClick: @sendPasswordReset,
+            "Yes"
+            i className:"checkmark icon"
+          
 
       div className: "ui modal", id: "update_email",
         div className: "header",
@@ -32,7 +61,7 @@ user_indentification = null
             div className: "ui form",
               div className: "field",
                 label null, "Update Email"
-                input placeholder: user_indentification
+                input placeholder: "Nothing"
 
       div className: "ui segment",
         div className: "ui info message",

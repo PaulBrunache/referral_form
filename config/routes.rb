@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to:'pages#home'
   post 'authenticate_user', to: 'pages#authenticate_user'
   post 'validate_admin', to: 'admin/dashboard#create_admin'
+  post 'reset_admin', to: 'admin/dashboard#reset_admin'
   resources :departments
   resources :positions
   resources :job_statuses

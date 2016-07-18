@@ -16,6 +16,19 @@ class Admin::DashboardController < ApplicationController
   def new_admin
     @admin = Admin.new
   end
+  
+  #reset admin password through devise method catch exceptions
+  def reset_admin
+    begin
+      user = Admin.where( email: params['email']).first
+      user.send_reset_password_instructions
+      render status: 200
+    rescue Exception => e
+      raise e  
+      render status: 500
+      render :edit_admin
+    end
+  end
 
   def create_admin
     begin
