@@ -7,6 +7,9 @@ ui = React.createElement
 
   getInitialState: ->
     user_indentification: ''
+    flash_message: ''
+    message_type: ''
+    
     
   resetClicked: ->
     @setState user_indentification:  $('.text span').text()
@@ -16,27 +19,29 @@ ui = React.createElement
     @setState user_indentification: $('.text span').text()
     $('#update_email').modal('show')
     
+    
   sendPasswordReset: (e)->
     e.preventDefault()
-    
     $.ajax
-        method: 'POST'
+        type: 'POST'
         url: "/reset_admin"
         data: 
           email: @state.user_indentification
         dataType: 'JSON'
-        error: (jqXHR, textStatus, errorThrown) ->
-            console.log(errorThrown)
-            console.log(jqXHR)
+        success:(data) =>
+          for key, val of data
+            @setState flash_message: val
+            @setState message_type: "success"
+            break
+        error:(data) =>
+          @setState flash_message: "Something went wrong. Please select a user and try again"
+          @setState message_type: "error"
+        
             
-        success: (data, textStatus, jqXHR) ->
-            $('body').append "Successful AJAX call: #{data}"
-            
-    
-
-
   render: ->
     div className: "ui container",
+      if @state.flash_message
+        ui flashMessage, message_type: @state.message_type, message: @state.flash_message
       div className: "ui segment",
         ui iconHeader, icon_text: "manageAdmins", icon_class: "blue line chart icon"
 

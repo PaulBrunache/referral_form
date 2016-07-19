@@ -22,10 +22,16 @@ class Admin::DashboardController < ApplicationController
     begin
       user = Admin.where( email: params['email']).first
       user.send_reset_password_instructions
-      render status: 200
+      render :json => {
+        text: 'Success: please instruct the user to check their email for reset instructions',
+        status: :ok
+      }
     rescue Exception => e
       raise e  
-      render status: 500
+      render :json => {
+        text: 'Something went wrong. Please select a user and try again',
+        status: 500
+      }
       render :edit_admin
     end
   end
@@ -37,7 +43,6 @@ class Admin::DashboardController < ApplicationController
       @admin.save!
       flash[:success] = "Admin was successfully created"
     rescue
-      flash[:info] = "Admin was not created please view errors below"
       render :new_admin
     end
   end
