@@ -3,7 +3,7 @@ ui = React.createElement
 
 
 
-@manageAdmins = React.createClass
+@newReferrals = React.createClass
 
   getInitialState: ->
     user_indentification: ''
@@ -42,9 +42,7 @@ ui = React.createElement
     div className: "ui container",
       if @state.flash_message
         ui flashMessage, message_type: @state.message_type, message: @state.flash_message
-      div className: "ui segment",
-        ui iconHeader, icon_text: "manageAdmins", icon_class: "blue settings icon"
-
+     
       div className: "ui modal small transition", id: "reset_password",
         div className: "header", "Reset Account password"
       
@@ -70,7 +68,7 @@ ui = React.createElement
 
       div className: "ui segment",
         div className: "ui info message",
-          div className: "header", "Admin Management Instructions"
+          div className: "header", "New Referrals Instructions"
             ul className: "list",
               li null, "Select/search for the user in the dropdown"
               li null, "Select Reset or update user"
@@ -79,22 +77,15 @@ ui = React.createElement
       div className: "top-table column",
           div className: "ui segments",
             div className: "ui segment",
-              h4 className: "ui header", "Admins"
-            div className: "ui horizontal segments",
-              div className: "ui segment",
-                button className: "ui basic red button", onClick: @resetClicked,
-                  i className: "icon edit"
-                  "Reset Password"
-                button className: "ui basic blue button", onClick: @updateClicked,
-                  i className: "icon edit"
-                  "Update User"
-              div className: "ui segment",
-                div className: "ui fluid search selection dropdown", id: "user_dropdown",
-                  input type:"hidden", name:"user"
-                  i className: "dropdown icon"
-                  div className: "default text", "Search/Select user"
-                  div className: "menu",
-                    for user in @props.users
-                      div className: "item", 'data-value': user, key: user.id,
-                        i className: "user icon"
-                        span null, user.email
+              h4 className: "ui header", "New Referrals User Interface"
+           
+            div className: "ui segment",
+              div className: "ui fluid search selection dropdown", id: "user_dropdown",
+                input type:"hidden", name:"user"
+                i className: "dropdown icon"
+                div className: "default text", "Search/Select user"
+                div className: "menu",
+                  # for user in @props.users
+                  #   div className: "item", 'data-value': user, key: user.id,
+                  #     i className: "user icon"
+                  #     span null, user.email

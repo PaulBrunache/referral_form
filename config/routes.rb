@@ -14,8 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'dashboard', to: "dashboard#index"
     get 'referrals', to: "dashboard#referrals"
-    get 'edit', to: "dashboard#edit_admin"
-    get 'new', to: "dashboard#new_admin"
+    get 'manage', to: "dashboard#manage_admin"
     get 'leaderboard', to: "dashboard#leaderboard"
   end
 

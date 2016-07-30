@@ -4,17 +4,16 @@ class Admin::DashboardController < ApplicationController
   end
 
   def referrals
+    @referrals = Recommendation.all
   end
 
   def leaderboard
+    @leaderboard = Employee.find_by_sql("select * from employees Order by points desc")
   end
 
-  def edit_admin
-    @admin = Admin.all 
-  end
-
-  def new_admin
+  def manage_admin
     @admin = Admin.new
+    @admin_data = Admin.all 
   end
   
   #reset admin password through devise method catch exceptions
@@ -32,7 +31,7 @@ class Admin::DashboardController < ApplicationController
         text: 'Something went wrong. Please select a user and try again',
         status: 500
       }
-      render :edit_admin
+      render :manage_admin
     end
   end
 
@@ -43,7 +42,7 @@ class Admin::DashboardController < ApplicationController
       @admin.save!
       flash[:success] = "Admin was successfully created"
     rescue
-      render :new_admin
+      render :manage_admin
     end
   end
 

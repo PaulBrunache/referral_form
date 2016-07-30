@@ -8,15 +8,15 @@ html
     = csrf_meta_tags
   body
     - if params[:controller].downcase == 'admin/dashboard'
-      .ui.grid.container
-        .row
-          .three.wide.column
-            == render 'layouts/admin_menu'
-          .thirteen.wide.column
-            - flash.each do |name, msg|
-              .ui.segment
-                = content_tag :div, msg, class: "ui large #{name} middle aligned message" 
-            = yield
+      #container_size
+        #gradient
+          
+        //random menu
+        .ui.grid
+          .column.three.wide 
+            .twelve.wide.column
+              == render 'layouts/admin_menu'
+                = yield
     - else 
       == render 'layouts/menu'
       - flash.each do |name, msg|

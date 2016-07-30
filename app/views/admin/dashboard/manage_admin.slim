@@ -6,11 +6,10 @@
     //     | Referrals
 
     .ui.tabular.menu style="margin-top: 50px;"
-      .item.active data-tab="tab-name"  New Referrals
-      .item data-tab="tab-name2" Qualified Referrals
+      .item.active data-tab="tab-name"  Create Admin
+      .item data-tab="tab-name2" Manage Admin
     .ui.active.tab data-tab="tab-name" 
-      = react_component('newReferrals', {referrals: @referrals })
+      == render 'admin/dashboard/create_admin'
     .ui.tab data-tab="tab-name2" 
-      = react_component('qualifiedReferrals', {referrals: @qualifiedReferrals })
-
+      = react_component('manageAdmins', {users: @admin_data })
     

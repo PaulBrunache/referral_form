@@ -1,59 +1,10 @@
-.ui.sidebar.vertical.menu
-  .item
-    h4.center.aligned.ui.header Welcome To your referral panel
-    h1.center.aligned.ui.gray.header  
-     i.users.icon
-  = link_to admin_leaderboard_path, class: "item" do
-    i.idea.icon
-  = link_to admin_referrals_path, class: "item" do
-    i.settings.icon
-    Hello
-  .ui.left.pointing.dropdown.link.item
-    i.dropdown.icon
-    | Manage Admins
+.ui.top.attached.menu.bg-gradient-main
+  .ui.dropdown.icon.item
+    i.wrench.icon
     .menu
-      = link_to admin_new_path, class: "item"
-        i.add.icon
-        |Create Admin 
-        
-      = link_to admin_edit_path, class: "item"
-        i.pencil.icon
-        |Edit Admins 
-  = link_to destroy_admin_session_path, class: "item" do
-    i.lock.icon
-  
-
-
-#admin-menu.ui.left.fixed.medium.vertical.menu
-  .item
-    h4.center.aligned.ui.header Welcome To your referral panel
-    h1.center.aligned.ui.gray.header  
-     i.users.icon
-  = link_to admin_leaderboard_path, class: "item"
-    i.sitemap.icon
-    | Leaderboard
-  = link_to admin_referrals_path, class: "item"
-    | Referrals
-    div.ui.blue.label 7
-  .ui.left.pointing.dropdown.link.item
-    i.dropdown.icon
-    | Manage Admins
-    .menu
-      = link_to admin_new_path, class: "item"
-        i.add.icon
-        |Create Admin 
-        
-      = link_to admin_edit_path, class: "item"
-        i.pencil.icon
-        |Edit Admins   
-        
-
-      
-  = link_to destroy_admin_session_path, method: :delete, class: "item"
-    i.lock.icon
-    | Logout
-
-
-#admin_hidden_menu.ui.fixed.main.menu
-  a.launch.icon.item.sidebar-toggle
-    i.content.icon Menu
+      .item
+        i.dropdown.icon
+        span.text New
+        .menu
+          .item Document
+          .item Image
