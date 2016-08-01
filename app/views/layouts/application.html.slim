@@ -8,15 +8,11 @@ html
     = csrf_meta_tags
   body
     - if params[:controller].downcase == 'admin/dashboard'
-      #container_size
-        #gradient
-          
-        //random menu
-        .ui.grid
-          .column.three.wide 
-            .twelve.wide.column
-              == render 'layouts/admin_menu'
-                = yield
+      #gradient
+        == render 'layouts/admin_menu'
+      #container_size  
+        .pusher
+          == render 'layouts/admin_home'  
     - else 
       == render 'layouts/menu'
       - flash.each do |name, msg|
