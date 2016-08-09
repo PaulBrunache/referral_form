@@ -1,12 +1,50 @@
-#admin_dashboard.ui.raised.segment
-  .ui.grid.center.aligned
-    .four.wide.column
-      = react_component('featureButton')
-    .four.wide.column
-      = react_component('featureButton')
-    .four.wide.column
-      = react_component('featureButton')
-      |Leaderboard  
-    .four.wide.column
-      = react_component('featureButton')
+.ui.four.centered.cards
+  .card
+    .blurring.dimmable.image
+      .ui.dimmer
+        .content
+          .center
+            .description hello goodbye a lorem
+      = image_tag("svg/interface.svg")
+    .content
+      a.header href=admin_manage_path Manage Admins
+  .card
+    .blurring.dimmable.image
+      .ui.dimmer
+        .content
+          .center
+            .description hello goodbye a lorem
+      = image_tag("svg/user.svg")
+    .content
+      a.header href=admin_leaderboard_path Create Admin
+
+.ui.four.centered.cards
+  .card
+    .blurring.dimmable.image
+      .ui.dimmer
+        .content
+          .center
+            .description hello goodbye a lorem
+      = image_tag("svg/social.svg")
+    .content
+      a.header href=admin_referrals_path New Referrals
+  .card
+    .blurring.dimmable.image
+      .ui.dimmer
+        .content
+          .center
+            .description hello goodbye a lorem
+      = image_tag("svg/medal-1.svg")
+    .content
+      a.header href=admin_leaderboard_path Leaderboard
+  .card
+    .blurring.dimmable.image
+      .ui.dimmer
+        .content
+          .center
+            .description hello goodbye a lorem
+      = image_tag("svg/like.svg")
+    .content
+      a.header href=admin_leaderboard_path Qualified Referrals
+          
   

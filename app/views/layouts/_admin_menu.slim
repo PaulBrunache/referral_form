@@ -1,14 +1,12 @@
 .ui.icon.menu.bg-gradient-main
   a.menu.item
     i.content.large.icon
+  a.menu.item href=admin_dashboard_path
+    i.home.large.icon
   .right.labeled.menu.red
     a.item
       i.user.icon
-      | Games
-    a.item
-      i.video.camera.icon
-      | Channels
-    a.item
-      i.video.play.icon
-      | Videos
-  
+      | Profile
+    = link_to destroy_admin_session_path, method: :delete, class: "item"
+      i.lock.icon		    
+      | Logout		    

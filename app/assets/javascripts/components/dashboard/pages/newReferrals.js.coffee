@@ -9,23 +9,23 @@ ui = React.createElement
     user_indentification: ''
     flash_message: ''
     message_type: ''
-    
-    
+
+
   resetClicked: ->
     @setState user_indentification:  $('.text span').text()
     $('#reset_password').modal('show')
-    
+
   updateClicked: ->
     @setState user_indentification: $('.text span').text()
     $('#update_email').modal('show')
-    
-    
+
+
   sendPasswordReset: (e)->
     e.preventDefault()
     $.ajax
         type: 'POST'
         url: "/reset_admin"
-        data: 
+        data:
           email: @state.user_indentification
         dataType: 'JSON'
         success:(data) =>
@@ -36,27 +36,27 @@ ui = React.createElement
         error:(data) =>
           @setState flash_message: "Something went wrong. Please select a user and try again"
           @setState message_type: "error"
-        
-            
+
+
   render: ->
-    div className: "ui container",
+    div null,
       if @state.flash_message
         ui flashMessage, message_type: @state.message_type, message: @state.flash_message
-     
+
       div className: "ui modal small transition", id: "reset_password",
         div className: "header", "Reset Account password"
-      
-        div className: "content", 
+
+        div className: "content",
           p null, "Are you sure you want to reset the account password for " + @state.user_indentification
-      
+
         div className: "actions",
-          div className: "ui negative button", 
+          div className: "ui negative button",
             "No"
-          
+
           div className: "ui positive right labeled icon button", onClick: @sendPasswordReset,
             "Yes"
             i className:"checkmark icon"
-          
+
 
       div className: "ui modal", id: "update_email",
         div className: "header",
@@ -78,7 +78,7 @@ ui = React.createElement
           div className: "ui segments",
             div className: "ui segment",
               h4 className: "ui header", "New Referrals User Interface"
-           
+
             div className: "ui segment",
               div className: "ui fluid search selection dropdown", id: "user_dropdown",
                 input type:"hidden", name:"user"

@@ -9,36 +9,36 @@ ui = React.createElement
     user_indentification: ''
     flash_message: ''
     message_type: ''
-    
-    
+
+
   resetClicked: ->
     @setState user_indentification:  $('.text span').text()
     $('#reset_password').modal('show')
-    
+
   manage: ->
     @setState user_indentification: $('.text span').text()
     $('#update_email').modal('show')
-    
-            
+
+
   render: ->
-    div className: "ui container",
+    div null,
       if @state.flash_message
         ui flashMessage, message_type: @state.message_type, message: @state.flash_message
-     
+
       div className: "ui modal small transition", id: "reset_password",
         div className: "header", "Reset Account password"
-      
-        div className: "content", 
+
+        div className: "content",
           p null, "Are you sure you want to reset the account password for " + @state.user_indentification
-      
+
         div className: "actions",
-          div className: "ui negative button", 
+          div className: "ui negative button",
             "No"
-          
+
           div className: "ui positive right labeled icon button", onClick: @sendPasswordReset,
             "Yes"
             i className:"checkmark icon"
-          
+
 
       div className: "ui modal", id: "update_email",
         div className: "header",
