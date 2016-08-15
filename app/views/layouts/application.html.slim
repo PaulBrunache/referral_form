@@ -8,15 +8,15 @@ html
     = csrf_meta_tags
   body
     - if params[:controller].downcase == 'admin/dashboard'
-      #gradient_wrapper
-        == render 'layouts/admin_menu'
+
+      == render 'layouts/admin_menu'
       #container_size  
         .pusher
           #admin_dashboard.ui.segment
             - if current_page?(controller: 'admin/dashboard', action: 'index')
               == render 'layouts/admin_home' 
             - else 
-              = yield
+            = yield
     - else 
       == render 'layouts/menu'
       - flash.each do |name, msg|
