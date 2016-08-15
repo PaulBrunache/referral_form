@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -26,10 +25,9 @@ ActiveRecord::Schema.define(version: 20160319170829) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
-
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
@@ -45,9 +43,8 @@ ActiveRecord::Schema.define(version: 20160319170829) do
     t.integer  "points"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["department_id"], name: "index_employees_on_department_id"
   end
-
-  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
 
   create_table "job_statuses", force: :cascade do |t|
     t.string   "name"
@@ -73,10 +70,9 @@ ActiveRecord::Schema.define(version: 20160319170829) do
     t.integer  "JobStatus_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.index ["JobStatus_id"], name: "index_recommendations_on_JobStatus_id"
+    t.index ["employee_id"], name: "index_recommendations_on_employee_id"
+    t.index ["position_id"], name: "index_recommendations_on_position_id"
   end
-
-  add_index "recommendations", ["JobStatus_id"], name: "index_recommendations_on_JobStatus_id"
-  add_index "recommendations", ["employee_id"], name: "index_recommendations_on_employee_id"
-  add_index "recommendations", ["position_id"], name: "index_recommendations_on_position_id"
 
 end
