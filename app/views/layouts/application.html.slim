@@ -8,7 +8,7 @@ html
     = csrf_meta_tags
   body
     - if params[:controller].downcase == 'admin/dashboard'
-      #gradient
+      #gradient_wrapper
         == render 'layouts/admin_menu'
       #container_size  
         .pusher
